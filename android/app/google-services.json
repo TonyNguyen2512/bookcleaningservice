@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "36333213591",
+    "firebase_url": "https://cleaning-booking-ed9e0-default-rtdb.firebaseio.com",
+    "project_id": "cleaning-booking-ed9e0",
+    "storage_bucket": "cleaning-booking-ed9e0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:36333213591:android:9e7076257836ed5a0196d2",
+        "android_client_info": {
+          "package_name": "com.bookcleaningservice.google_login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "36333213591-74893lbfnb4ls81ba8v15p2iuufiomd1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoXxxk0WbLbky_JCGlncftqKfvsK7UDgU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "36333213591-74893lbfnb4ls81ba8v15p2iuufiomd1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:36333213591:android:59e5da88426af81b0196d2",
+        "android_client_info": {
+          "package_name": "com.bookcleaningservice.google_login_service"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "36333213591-bstlt4ic9ieov1244i9oqh1h8dluqk4g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bookcleaningservice.google_login_service",
+            "certificate_hash": "b3c7ebe8e8fd6eec6d764b3dbd5d14fce5a5e801"
+          }
+        },
+        {
+          "client_id": "36333213591-74893lbfnb4ls81ba8v15p2iuufiomd1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoXxxk0WbLbky_JCGlncftqKfvsK7UDgU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "36333213591-74893lbfnb4ls81ba8v15p2iuufiomd1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
