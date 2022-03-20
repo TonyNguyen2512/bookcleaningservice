@@ -1,0 +1,18 @@
+Figma: https://www.figma.com/file/lpPLhuECI5l85TOHTPonoC/swd?node-id=0%3A1
+
+API: https://hotelroom-service.herokuapp.com/swagger/index.html#/index.html
+
+Firebase config: 
+apiKey: "AIzaSyCYhYHYAZzVa5VttEG0lChZBQz4LlrYeCE",
+  authDomain: "cleaning-booking-ed9e0.firebaseapp.com",
+  projectId: "cleaning-booking-ed9e0",
+  storageBucket: "cleaning-booking-ed9e0.appspot.com",
+  messagingSenderId: "36333213591",
+  appId: "1:36333213591:web:449a0807c82266330196d2",
+  measurementId: "G-067FKL02NK"
+
+SQL Server Database connection:
+Server: clean-db-swd391.database.windows.net
+User: admin1
+Password: Cleandb1
+
