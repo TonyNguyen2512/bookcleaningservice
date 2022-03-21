@@ -1,49 +1,31 @@
+import 'package:bookcleaningservice/page/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
+import 'dashboard.dart';
+import 'routes/routes.dart';
+
+
 void main() {
-  runApp(GoogleLoginApp());
+  runApp(MyApp());
 }
+class MyApp extends StatelessWidget {
+  static final String title = 'User Profile';
 
-class GoogleLoginApp extends StatefulWidget {
-  const GoogleLoginApp({ Key? key }) : super(key: key);
-
-  @override
-  _GoogleLoginAppState createState() => _GoogleLoginAppState();
-}
-
-class _GoogleLoginAppState extends State<GoogleLoginApp> {
-  GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
   @override
   Widget build(BuildContext context) {
-    GoogleSignInAccount? user = _googleSignIn.currentUser;
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Google Login (' + (user == null ? 'Logged out' : 'User: ' + user.displayName.toString()) + ')'),
-        ), // AppBar
-        body: Center(
-          child: Column(
-            children: [
-              Image.asset('assets/SWD-01.png'),
-              ElevatedButton(child: Text('Sign In'),
-                  onPressed: user != null ? null : () async {
-                    await _googleSignIn.signIn();
-                    setState(() {});
-                  }), // ElevatedButton
-              ElevatedButton(child: Text('Sign Out'),
-                  onPressed: user == null ? null : () async {
-                    await _googleSignIn.signOut();
-                    setState(() {});
-                  }), // ElevatedButton
-            ],
-          ), // Column
-        ), // Center
-      ), // Scaffold
+      routes: Routes.routes,
+      initialRoute: "/",
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryColor: Colors.blue.shade300,
+        dividerColor: Colors.black,
+      ),
+      title: title,
     );
   }
 }
-
 
 /*
 class MyApp extends StatelessWidget {
