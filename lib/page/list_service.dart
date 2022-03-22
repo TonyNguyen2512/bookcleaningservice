@@ -57,8 +57,8 @@ class _ListServicesState extends State<ListServices> {
         for (var item in result) 
         DataRow(
           cells: <DataCell>[
-            DataCell(Text(item.name!)),
-            DataCell(Text(item.price!.toString())),
+            DataCell(Text(item.name.toString())),
+            DataCell(Text(item.price.toString())),
           ],
         ),
       ],

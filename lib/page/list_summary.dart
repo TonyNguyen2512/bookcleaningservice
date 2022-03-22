@@ -41,13 +41,25 @@ class _ListSummariesState extends State<ListSummaries> {
       columns: const <DataColumn>[
         DataColumn(
           label: Text(
-            'Name',
+            'Company',
             style: TextStyle(fontStyle: FontStyle.italic),
           ),
         ),
         DataColumn(
           label: Text(
-            'Price',
+            'Hotel',
+            style: TextStyle(fontStyle: FontStyle.italic),
+          ),
+        ),
+        DataColumn(
+          label: Text(
+            'Today \nOrders',
+            style: TextStyle(fontStyle: FontStyle.italic),
+          ),
+        ),
+        DataColumn(
+          label: Text(
+            'Total \nOrders',
             style: TextStyle(fontStyle: FontStyle.italic),
           ),
         ),
@@ -56,10 +68,10 @@ class _ListSummariesState extends State<ListSummaries> {
          
         DataRow(
           cells: <DataCell>[
-            DataCell(Text(result.company!.toString())),
-            DataCell(Text(result.hotel!.toString())),
-            DataCell(Text(result.todayOrders!.toString())),
-            DataCell(Text(result.totalOrders!.toString())),
+            DataCell(Text(result.company.toString())),
+            DataCell(Text(result.hotel.toString())),
+            DataCell(Text(result.todayOrders.toString())),
+            DataCell(Text(result.totalOrders.toString())),
           ],
         ),
       ],

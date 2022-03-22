@@ -62,9 +62,9 @@ class _ListHotelMembersState extends State<ListHotelMembers> {
         for (var item in result) 
         DataRow(
           cells: <DataCell>[
-            DataCell(Text(item.phone!)),
-            DataCell(Text(item.address!)),
-            DataCell(Text(item.email!))
+            DataCell(Text(item.phone.toString())),
+            DataCell(Text(item.address.toString())),
+            DataCell(Text(item.email.toString()))
           ],
         ),
       ],
