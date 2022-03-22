@@ -38,6 +38,10 @@ class _ListOrdersState extends State<ListOrders> {
         // child: ListView.builder(itemCount: result.length, itemBuilder: (context, index) {
         //   return ListTile(title: Text(result[index].name!));
         // },))
+        child: SingleChildScrollView(
+  scrollDirection: Axis.vertical,
+    child: SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
         child: DataTable(
       columns: const <DataColumn>[
         DataColumn(
@@ -48,13 +52,19 @@ class _ListOrdersState extends State<ListOrders> {
         ),
         DataColumn(
           label: Text(
-            'Start',
+            'Start Time',
             style: TextStyle(fontStyle: FontStyle.italic),
           ),
         ),
         DataColumn(
           label: Text(
-            'End',
+            'End Time',
+            style: TextStyle(fontStyle: FontStyle.italic),
+          ),
+        ),
+        DataColumn(
+          label: Text(
+            'Status',
             style: TextStyle(fontStyle: FontStyle.italic),
           ),
         )
@@ -66,11 +76,14 @@ class _ListOrdersState extends State<ListOrders> {
             DataCell(Text(item.name!)),
             DataCell(Text(item.startDate!)),
             DataCell(Text(item.endDate!)),
+            DataCell(Text(item.status!.toString()))
           ],
         ),
       ],
     )
     )
+    )
+      )
     );
   }
 }

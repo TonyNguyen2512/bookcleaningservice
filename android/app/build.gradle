@@ -46,6 +46,9 @@ dependencies {
 
 android {
     compileSdkVersion flutter.compileSdkVersion
+    ndk {
+            abiFilters 'armeabi-v7a', 'x86', 'armeabi'
+        }
     packagingOptions {
        resources.excludes.add("META-INF/*")
    }
@@ -58,6 +61,7 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.bookcleaningservice.google_login"
+        ndkVersion "24.0.8215888"
         minSdkVersion 24
         targetSdkVersion 32
         versionCode flutterVersionCode.toInteger()

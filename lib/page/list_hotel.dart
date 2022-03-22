@@ -37,6 +37,10 @@ class _ListHotelsState extends State<ListHotels> {
         // child: ListView.builder(itemCount: result.length, itemBuilder: (context, index) {
         //   return ListTile(title: Text(result[index].name!));
         // },))
+        child: SingleChildScrollView(
+  scrollDirection: Axis.vertical,
+    child: SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
         child: DataTable(
       columns: const <DataColumn>[
         DataColumn(
@@ -70,6 +74,8 @@ class _ListHotelsState extends State<ListHotels> {
       ],
     )
     )
+    )
+      )
     );
   }
 }

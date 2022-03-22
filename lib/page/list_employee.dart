@@ -38,6 +38,10 @@ class _ListEmployeesState extends State<ListEmployees> {
         // child: ListView.builder(itemCount: result.length, itemBuilder: (context, index) {
         //   return ListTile(title: Text(result[index].name!));
         // },))
+        child: SingleChildScrollView(
+  scrollDirection: Axis.vertical,
+    child: SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
         child: DataTable(
       columns: const <DataColumn>[
         DataColumn(
@@ -72,12 +76,14 @@ class _ListEmployeesState extends State<ListEmployees> {
             DataCell(Text(item.name!)),
             DataCell(Text(item.phone!)),
             DataCell(Text(item.address!)),
-            DataCell(Text( item.status!.toString() == "1" ? "Free" : "Busy"))
+            DataCell(Text( item.status!.toString() == "1" ? "Free" : "Busy")),
           ],
         ),
       ],
     )
     )
+    )
+      )
     );
   }
 }

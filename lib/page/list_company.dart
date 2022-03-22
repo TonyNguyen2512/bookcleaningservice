@@ -36,6 +36,10 @@ class _ListOtherCompanyState extends State<ListOtherCompany> {
         // child: ListView.builder(itemCount: result.length, itemBuilder: (context, index) {
         //   return ListTile(title: Text(result[index].name!));
         // },))
+        child: SingleChildScrollView(
+  scrollDirection: Axis.vertical,
+    child: SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
         child: DataTable(
       columns: const <DataColumn>[
         DataColumn(
@@ -55,7 +59,13 @@ class _ListOtherCompanyState extends State<ListOtherCompany> {
             'Address',
             style: TextStyle(fontStyle: FontStyle.italic),
           ),
-        )
+        ),
+        DataColumn(
+          label: Text(
+            'Email',
+            style: TextStyle(fontStyle: FontStyle.italic),
+          ),
+        ),
       ],
       rows: <DataRow>[
         for (var item in result) 
@@ -64,11 +74,14 @@ class _ListOtherCompanyState extends State<ListOtherCompany> {
             DataCell(Text(item.name!)),
             DataCell(Text(item.phone!)),
             DataCell(Text(item.address!)),
+            DataCell(Text(item.email!)),
           ],
         ),
       ],
     )
     )
+    )
+      )
     );
   }
 }

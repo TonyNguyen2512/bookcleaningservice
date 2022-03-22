@@ -18,7 +18,7 @@ class _ListHotelMembersState extends State<ListHotelMembers> {
   List<ListHotelMemberRes> result = [];
   @override
   void initState() {
-    HotelMemberRepImpl().getListHotelMember(UrlApi.GetEmployee).then((value) => {
+    HotelMemberRepImpl().getListHotelMember(UrlApi.GetHotelMember).then((value) => {
       log(value.toString()),
       setState(() {
         result = value;
@@ -37,6 +37,10 @@ class _ListHotelMembersState extends State<ListHotelMembers> {
         // child: ListView.builder(itemCount: result.length, itemBuilder: (context, index) {
         //   return ListTile(title: Text(result[index].name!));
         // },))
+        child: SingleChildScrollView(
+  scrollDirection: Axis.vertical,
+    child: SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
         child: DataTable(
       columns: const <DataColumn>[
         DataColumn(
@@ -47,7 +51,7 @@ class _ListHotelMembersState extends State<ListHotelMembers> {
         ),
         DataColumn(
           label: Text(
-            'Addr',
+            'Address',
             style: TextStyle(fontStyle: FontStyle.italic),
           ),
         ),
@@ -70,6 +74,8 @@ class _ListHotelMembersState extends State<ListHotelMembers> {
       ],
     )
     )
+    )
+      )
     );
   }
 }
