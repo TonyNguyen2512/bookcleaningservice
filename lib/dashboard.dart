@@ -92,48 +92,103 @@ class _DashboardState extends State<Dashboard> {
       ),
       body: Center(
         child: Column(
-            children: [
-              ElevatedButton(child: Text('Roles'),
+            children: [ 
+              Container(margin: EdgeInsets.only(top: 30)),
+                  ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                minimumSize: Size(200, 40),
+              ),
+                child: Text('Roles'),
                   onPressed: () => {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => ListRoles(),))
                   }), 
-                  ElevatedButton(child: Text('Rooms'),
+                  Container(margin: EdgeInsets.only(top: 5)),
+                  ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                minimumSize: Size(200, 40),
+              ),
+                child: Text('Rooms'),
                   onPressed: () => {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => ListRooms(),))
                   }), 
-                  ElevatedButton(child: Text('Room Types'),
+                  Container(margin: EdgeInsets.only(top: 5)),
+                  ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                minimumSize: Size(200, 40),
+              ),
+                child: Text('Room Types'),
                   onPressed: () => {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => ListRoomTypes(),))
                   }), 
-                  ElevatedButton(child: Text('System Room Types'),
+                  Container(margin: EdgeInsets.only(top: 5)),
+                  ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                minimumSize: Size(200, 40),
+              ),
+                child: Text('System Room Types'),
                   onPressed: () => {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => ListSystemRoomTypes(),))
                   }),
-              ElevatedButton(child: Text('Companies'),
+              Container(margin: EdgeInsets.only(top: 5)),
+                  ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                minimumSize: Size(200, 40),
+              ),
+                child: Text('Companies'),
                   onPressed: () => {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => ListOtherCompany(),))
                   }), // ElevatedButton
-              ElevatedButton(child: Text('Company Employees'),
+              Container(margin: EdgeInsets.only(top: 5)),
+                  ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                minimumSize: Size(200, 40),
+              ),
+                child: Text('Company Employees'),
                   onPressed: () async {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => ListEmployees(),));
                   }), // ElevatedButton
-                  ElevatedButton(child: Text('Services'),
+                  Container(margin: EdgeInsets.only(top: 5)),
+                  ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                minimumSize: Size(200, 40),
+              ),
+                child: Text('Services'),
                   onPressed: () async {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => ListServices(),));
                   }),
-                  ElevatedButton(child: Text('Hotels'),
+                  Container(margin: EdgeInsets.only(top: 5)),
+                  ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                minimumSize: Size(200, 40),
+              ),
+                child: Text('Hotels'),
                   onPressed: () async {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => ListHotels(),));
                   }),
-                  ElevatedButton(child: Text('Hotel Members'),
+                  Container(margin: EdgeInsets.only(top: 5)),
+                  ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                minimumSize: Size(200, 40),
+              ),
+                child: Text('Hotel Members'),
                   onPressed: () async {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => ListHotelMembers(),));
                   }),
-                  ElevatedButton(child: Text('Orders'),
+                  Container(margin: EdgeInsets.only(top: 5)),
+                  ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                minimumSize: Size(200, 40),
+              ),
+                child: Text('Orders'),
                   onPressed: () async {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => ListOrders(),));
                   }),
-                  ElevatedButton(child: Text('Summary'),
+                  Container(margin: EdgeInsets.only(top: 5)),
+                  ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                minimumSize: Size(200, 40),
+              ),
+                child: Text('Summary'),
                   onPressed: () async {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => ListSummaries(),));
                   }),

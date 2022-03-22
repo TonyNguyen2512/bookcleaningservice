@@ -51,8 +51,15 @@ async => {
         body: Center(
           child: Column(
             children: [
+              Container(margin: EdgeInsets.only(top: 40)),
               Image.asset('assets/SWD-01.png'),
-              ElevatedButton(child: Text('Log In With Google'),
+              Container(margin: EdgeInsets.only(top: 70)),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                minimumSize: Size(200, 40),
+                primary: Colors.lightBlue
+              ),
+              child: Text('Log In With Google'),
                   onPressed: user != null ? null : () async {
                     final userGoogle = await _googleSignIn.signIn();
                     final googleAuth = await userGoogle!.authentication;
@@ -69,12 +76,22 @@ async => {
                     setState(() {});
                     Navigator.push(context, MaterialPageRoute(builder: (context) => Dashboard(),));
                   }), // ElevatedButton
-                  ElevatedButton(child: Text('Dashboard'),
+                  ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                minimumSize: Size(200, 40),
+                primary: Colors.cyan
+              ),
+              child: Text('Dashboard'),
                   onPressed: user == null ? null : () async {
                     if (user != null) {setState(() {});
                       Navigator.push(context, MaterialPageRoute(builder: (context) => Dashboard(),));}
                   }), // ElevatedButton
-              ElevatedButton(child: Text('Log Out'),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                minimumSize: Size(200, 40),
+                primary: Colors.red[900]
+              ),
+              child: Text('Log Out'),
                   onPressed: user == null ? null : () async {
                     await _googleSignIn.signOut();
                     setState(() {});
