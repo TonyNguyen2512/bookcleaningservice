@@ -1,12 +1,12 @@
 import 'dart:developer';
 
+import 'package:bookcleaningservice/widget/token.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-
-
 
 import 'dashboard.dart';
 import 'implement/get_token_imp.dart';
@@ -24,7 +24,6 @@ class GoogleLoginApp extends StatefulWidget {
 class _GoogleLoginAppState extends State<GoogleLoginApp> {
 // Create storage
 final storage = new FlutterSecureStorage();
-static String token = "";
 
   ListTokenRes result = new ListTokenRes();
   @override
@@ -34,7 +33,6 @@ async => {
       log(value.toString()),
       setState(() {
         result = value;
-        token = value.toString();
       }), 
       await storage.write(key: "token", value: value.toString())
     });
@@ -44,6 +42,7 @@ async => {
   GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
   @override
   Widget build(BuildContext context) {
+    
     GoogleSignInAccount? user = _googleSignIn.currentUser;
     return Scaffold(
         appBar: AppBar(
@@ -55,7 +54,18 @@ async => {
               Image.asset('assets/SWD-01.png'),
               ElevatedButton(child: Text('Log In With Google'),
                   onPressed: user != null ? null : () async {
-                    await _googleSignIn.signIn();
+                    final userGoogle = await _googleSignIn.signIn();
+                    final googleAuth = await userGoogle!.authentication;
+                      print(googleAuth.idToken);
+                      print(googleAuth.accessToken);
+                      GoogleTokenID.token = googleAuth.idToken!;
+                      
+            //         final userCredential = await FirebaseAuth.instance.signInWithCredential(
+            // GoogleAuthProvider.credential(
+            //     idToken: googleAuth.idToken,
+            //     accessToken: googleAuth.accessToken));
+                // const token = userCredential.user.getIdToken();
+                // await storage.write(key: "token", value: userCredential.user.getIdToken())
                     setState(() {});
                     Navigator.push(context, MaterialPageRoute(builder: (context) => Dashboard(),));
                   }), // ElevatedButton
@@ -69,7 +79,7 @@ async => {
                     await _googleSignIn.signOut();
                     setState(() {});
                   }), 
-                  Text(''),// ElevatedButton
+                  Text(""),// ElevatedButton
             ],
           ), // Column
         ), // Center
