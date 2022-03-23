@@ -46,9 +46,6 @@ dependencies {
 
 android {
     compileSdkVersion flutter.compileSdkVersion
-    ndk {
-            abiFilters 'armeabi-v7a', 'x86', 'armeabi'
-        }
     packagingOptions {
        resources.excludes.add("META-INF/*")
    }
